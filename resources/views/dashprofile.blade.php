@@ -11,10 +11,9 @@
 <div class="profile-detail mb-5">
     <ul class="generic-list-item generic-list-item-flash">
         <li><span class="profile-name">Registration Date:</span><span class="profile-desc">{{auth()->user()->created_at->format('M')}}
-            {{auth()->user()->created_at->format('d')}}
+            {{auth()->user()->created_at->format('d')}} {{auth()->user()->created_at->format('Y')}}
         </span></li>
-        <li><span class="profile-name">First Name:</span><span class="profile-desc">{{auth()->user()->name}}</span></li>
-        <li><span class="profile-name">Last Name:</span><span class="profile-desc">Smith</span></li>
+        <li><span class="profile-name">Name:</span><span class="profile-desc">{{auth()->user()->name}}</span></li>
         <li><span class="profile-name">User Name:</span><span class="profile-desc">{{auth()->user()->username}}</span></li>
         <li><span class="profile-name">Email:</span><span class="profile-desc">{{auth()->user()->email}}</span></li>
         <li><span class="profile-name">Phone Number:</span><span class="profile-desc">(91) 7547 622250</span></li>

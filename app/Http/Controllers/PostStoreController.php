@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,4 +27,6 @@ class PostStoreController extends Controller
         $store->save();
         return redirect('/blog-area');
     }
+
+
 }

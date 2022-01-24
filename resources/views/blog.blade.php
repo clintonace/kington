@@ -41,7 +41,7 @@
                 <div class="card card-item">
                     <div class="card-image">
                         <a href="blog-single.html" class="d-block">
-                            <img class="card-img-top lazy" src="/postimage/{{$post->image}}" data-src="/postimage/{{$post->image}}" alt="Card image cap">
+                            <img class="img-fluid rounded-rounded lazy" src="/postimage/{{$post->image}}" data-src="/postimage/{{$post->image}}" alt="Card image cap">
                         </a>
                         <div class="course-badge-labels">
                             <div class="course-badge">{{$post->created_at->format('M')}}
@@ -55,12 +55,12 @@
 
                         <h5 class="card-title"><a href="blog-single.html">{{$post->title}}</a></h5>
                         <ul class="generic-list-item generic-list-item-bullet generic-list-item--bullet d-flex align-items-center flex-wrap fs-14 pt-2">
-                            <li class="d-flex align-items-center">By<a href="#">{{$post->user->name}}</a></li>
+                            <li class="d-flex align-items-center">By<a href="#">{{$post->user->name}}  {{$post->id}}</a></li>
                             <li class="d-flex align-items-center"><a href="#">4 Comments</a></li>
                             <li class="d-flex align-items-center"><a href="#">130 Likes</a></li>
                         </ul>
                         <div class="d-flex justify-content-between align-items-center pt-3">
-                            <a href="blog-single.html" class="btn theme-btn theme-btn-sm theme-btn-white">Read More <i class="la la-arrow-right icon ml-1"></i></a>
+                            <a href="{{route('post.details', $post->id)}}" class="btn theme-btn theme-btn-sm theme-btn-white">Read More <i class="la la-arrow-right icon ml-1"></i></a>
                             <div class="share-wrap">
                                 <ul class="social-icons social-icons-styled">
                                     <li class="mr-0"><a href="#" class="facebook-bg"><i class="la la-facebook"></i></a></li>

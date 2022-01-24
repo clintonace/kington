@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,7 +27,21 @@ class HomeController extends Controller
     {
 
 
-        return view('dash');
+        if (Auth::user()->type == 'user') {
+            return view('dash');
+        } else {
+            return view('admin/users/index');
+        }
+    }
+
+
+    public function viewstudents()
+    {
+
+        $student = User::all();
+
+        return view('admin/users/allstudents', compact('student'));
+        
     }
 
     public function profile()
@@ -40,10 +55,5 @@ class HomeController extends Controller
 
 
         return view('blog');
-
-
     }
-
-
-
 }

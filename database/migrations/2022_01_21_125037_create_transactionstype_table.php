@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddUsersIdToUsersTable extends Migration
+class CreateTransactionstypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddUsersIdToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-        $table-> integer('user_id')->onDelete('cascade');
+        Schema::create('transactionstype', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddUsersIdToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropIfExists('users_id');
-        });
+        Schema::dropIfExists('transactionstype');
     }
 }
